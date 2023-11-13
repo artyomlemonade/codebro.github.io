@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Code bro</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <div id="logo" onclick="slowScroll('#top')">
+      <span>CodeBro</span>
+    </div>
+    <div id="about">
+      <a href="#" title="Возможности" onclick="slowScroll('#main')">About us</a>
+      <a href="#" onclick="slowScroll('#overview')" title="Преимущества">Courses</a>
+      <a href="#" onclick="slowScroll('#contacts')" title="Контакты">Contacts</a>
+      <a href="#" onclick="slowScroll('#faq')" title="Ответы на вопросы">FAQ</a>
+    </div>
+  </header>
+
+  <div id="top">
+    <h1>Creating opportunities</h1>
+    <h3>for young people !</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Become a part of the developing IT community</h2>
+      <span>First IT remote school for developing countries</span>
+    </div>
+    <div class="text">
+      <span>CodeBro is absolutely non-profit project where people could acquire precious knowledge and skills needed for building a successful career.</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Our courses</h2>
+    <h4>Be greater with us !</h4>
+
+    <div class="img">
+      <img src="https://images.datacamp.com/image/upload/f_auto,q_auto:best/v1603718736/Why_Your_Company_Needs_Python_for_Business_Analytics_xzzles.png" alt="">
+      <span>Python course for beginners</span>
+    </div>
+    <div class="img">
+      <img src="https://miro.medium.com/v2/resize:fit:1400/1*oFfl-1UKLtd8XOswpwgriA.png" alt="">
+      <span>Advanced C++ course</span>
+    </div>
+    <div class="img">
+        <img src="https://devby.io/storage/images/78/78/55/55/derived/445103f7cc308ea5b0b3f2a521fd9753.jpg" alt="">
+        <span>Java developer course</span>
+      </div>
+      <div class="img">
+        <img src="https://miro.medium.com/v2/resize:fit:1200/1*LyZcwuLWv2FArOumCxobpA.png" alt="">
+        <span>Intermediate Javascript course</span>
+      </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Callback form</h5></center>
+    <form id="form_input">
+      <label for="name">Name <span>*</span></label><br>
+      <input type="text" placeholder="Enter name" name="name" id="name"><br>
+      <label for="email">Your email <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Message<span>*</span></label><br>
+			<textarea placeholder="Enter yout message" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Send</div>
+    </form>
+  </div>
+
+  <div id="faq">
+    <div class="element">
+      <span class="title">Donation</span><br>
+      <span class="heading">Purpose of donation</span>
+      <p>As we are non-profit project which aims to help people from all of the world to attain heights in the field of IT, we need a funding to offer this opportunity to every human-being on Earth. Your donation will be considered as a contribution to the future generation full of great innovations and amazing discoveries.</p>
+      <span class="heading">Why do we need a donation ?</span>
+      <p>Although we have a tuition for course, our team is aware of the fact that not every human has the capability to pay indicated amount of money. Therefore, we are openning a program based on your funding where prospective students will be accepted. </p>
+      <div class="faqbtn" >Donate</div>
+    </div>
+    <div class="element">
+      <span class="title">Student support</span><br>
+      <span class="heading">What is included in our support service ?</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
+      <span class="heading">Что входит в услуги сервиса</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
+      <div class="faqbtn" >Visit</div>
+    </div>
+    <div class="element">
+      <span class="title">Tuition fee</span><br>
+      <span class="heading">Какие гарантии есть</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
+      <span class="heading">Какие гарантии есть</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium beatae asperiores debitis perspiciatis perferendis nemo tempore distinctio officia commodi et non tempora laudantium culpa nostrum, quidem, quasi ratione itaque nam.</p>
+      <div class="faqbtn" >Pay</div>
+    </div>
+  </div>
+  <div class="footer"><p>&copy;<span id="year"> </span><span> CodeBro. All rights reserved.</span></p></div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+    $(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+    let year = document.querySelector("#year");
+
+  $(document).ready(function () {
+  year.innerText = new Date().getFullYear();
+  });
+  </script>
+</body>
+</html>
